@@ -159,13 +159,14 @@ h1>span{display:block}
 .glow2{border-radius:50%;background:radial-gradient(closest-side,rgba(255,213,138,.9),rgba(255,213,138,.22) 50%,rgba(255,213,138,0));transition:opacity .35s}
 .wire{background:#eceae3;border-radius:2px}
 .shade{background:#eceae3;-webkit-mask:url(img/lamp-dome.png) center/100% 100% no-repeat;mask:url(img/lamp-dome.png) center/100% 100% no-repeat;transition:background .35s}
-.cordwrap{display:block;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
-.cordline{position:absolute;left:9.5px;top:2px;width:3px;height:71px;background:#eceae3;border-radius:2px}
-.bead{position:absolute;left:2px;top:71px;width:18px;height:18px;border-radius:50%;background:#211f28;border:3.5px solid #eceae3}
+.cordwrap{display:block}
+.cordline{position:absolute;left:9.5px;top:2px;width:3px;height:71px;background:#eceae3;border-radius:2px;transform-origin:50% 0;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.bead{position:absolute;left:2px;top:71px;width:18px;height:18px;border-radius:50%;background:#211f28;border:3.5px solid #eceae3;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
 .lampbtn{position:absolute;left:58%;top:36%;width:20%;height:30%;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .night.off .glow,.night.off .glow2{opacity:0}
 .night.off .shade{background:#8e8a98}
-.night.pull .cordwrap{transform:translateY(12px)}
+.night.pull .cordline{transform:scaleY(1.169)}
+.night.pull .bead{transform:translateY(12px)}
 /* 六张便签 */
 .sec-h{font-family:var(--hand);font-weight:400;font-size:calc(clamp(36px,4.4vw,64px)*var(--hs));line-height:1.2;text-align:center;margin:0}
 .sec-sub{font:22px/1.4 var(--soft);color:var(--mute);text-align:center;margin:14px 0 0}
@@ -271,7 +272,7 @@ html[data-l=ko] .fbody{font-size:20px}
 html[data-l=zh-Hans] .kicker{font-size:27px}
 html[data-l=zh-Hans] .sec-sub{font-size:26px}
 @media (max-width:720px){html[data-l=zh-Hans] .kicker{font-size:23px} html[data-l=zh-Hans] .sec-sub{font-size:22px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cordwrap,.glow,.glow2,.shade{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cordline,.bead,.glow,.glow2,.shade{transition:none}}
 </style>
 </head>
 <body>
